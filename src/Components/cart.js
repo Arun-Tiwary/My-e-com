@@ -16,6 +16,7 @@ export const Cart = () =>{
             itemsInCart.map((item)=>
             <div key = {item.id}>
                 <ProductCard data = {item} />
+                <p>quantity: {item.quantity}</p>
                 <button onClick = {()=>addToCart(item)}>+</button>
                 <button onClick={()=>removeFromCart(item)}>-</button>
                 </div>

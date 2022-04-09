@@ -7,6 +7,7 @@ import { useCart } from './Context/cart-contxt';
 import {CartHeader} from "./Components/cart-header"
 
 
+
 function App() {
 
   const {test,} = useCart();
@@ -18,8 +19,8 @@ function App() {
       <h1>Hello World 525</h1>
       
       {test}
-      <button onClick = {() =>setRoute("products")}> Products</button>
-      <button onClick = {() =>setRoute("cart")}> Cart</button>
+      <button type ='button' className = {route === "products" ? "button-primary":"button-secondary"} onClick = {() =>setRoute("products")}> Products</button>
+      <button type = "button" className = {route === "cart" ? "button-primary" : "button-secondary" } onClick = {() =>setRoute("cart")}> Cart</button>
       <CartHeader />
 
       {route === "cart" && <Cart />}
