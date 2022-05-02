@@ -17,15 +17,15 @@ export const Cart = () =>{
             <div key = {item.id}>
                 <ProductCard data = {item} />
                 <p>quantity: {item.quantity}</p>
-                <button onClick = {()=>addToCart(item)}>+</button>
-                <button onClick={()=>removeFromCart(item)}>-</button>
+                <button className="button button-light" onClick = {()=>addToCart(item)}>+</button>
+                <button className="button button-light" onClick={()=>removeFromCart(item)}>-</button>
                 </div>
             )
         }
 
         {
             itemsInCart.length>0 && (<><h3>Cart Total : {cartTotal}</h3>
-            <button onClick={()=>emptyCart()}>Clear Cart</button>
+            <button className="button button-dark" onClick={()=>emptyCart()}>Clear Cart</button>
             </>
             )
           

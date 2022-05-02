@@ -23,7 +23,7 @@ export const ProductListing = () => {
        { products.map((item)=>
        <div style ={{border:"1px solid black", padding:"1px" , marginBottom:"1px"}}key ={item.id}>
        <ProductCard data ={item}/>
-       <button onClick = {()=>{setShowToast(true); addToCart(item)}}>Add to Cart</button>
+       <button className="button button-primary" onClick = {()=>{setShowToast(true); addToCart(item)}}>Add to Cart</button>
 
        </div>)
        }

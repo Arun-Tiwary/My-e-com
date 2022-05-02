@@ -31,9 +31,9 @@ export const products = [
       return(
           <>
           <div className="card" style ={{}}>
-            <img className="card-image" alt="product" src={image} ></img>
-              <h4>{name}</h4>
-              <small>{price}</small>
+            <img className="card-image" alt="product-img" src={image} ></img>
+              <h4 className="card-heading">{name}</h4>
+              <p className="card-description">{price}</p>
               {quantity && (<><small>quantity: {quantity}</small></>)}
 
           </div>
