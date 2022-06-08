@@ -1,7 +1,8 @@
-import { useCart } from "../Context/cart-contxt";
+import { useDataContext } from "../Context/data-context"
+
 
 export const CartHeader = () =>{
-    const {itemsInCart : item} = useCart();
+    const {state:{itemsInCart : item}} = useDataContext();
     return(
         <>
         {

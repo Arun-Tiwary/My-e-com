@@ -1,33 +1,25 @@
-
-import { useEffect, useState } from "react";
-import { useCart } from "../Context/cart-contxt"
-import {products, ProductCard} from "./product"
-export const ProductListing = () => {
-
-    const {addToCart, toastMessage} = useCart();
-    const [showtoast, setShowToast] = useState(false);
+import { useDataContext } from "../Context/data-context";
+import { ProductCard } from "./product";
 
 
+export const ProductListing = () =>{
 
-    useEffect(()=>{
-     setTimeout(()=>setShowToast(false),2000)
-    },[toastMessage])
+   const{state,dispatch} = useDataContext(); 
+
+   return(
+       <>
+       <h2>Top Products</h2>
+     {
+         state.products.map((item)=>(
+             <div key = {item.id}>
+                 <ProductCard data = {item} />
+                  <button class = "button button-fill" onClick = {()=>{dispatch({type: "ADD_TO_CART",payload: item})}}>Add to cart</button>
+                  
+                 </div>
+         ))
+     }
+       </>
+   )
 
 
-    return(
-        <>
-         {
-            
-         }
-        <h1>This is Products</h1>
-       { products.map((item)=>
-       <div style ={{border:"1px solid black", padding:"1px" , marginBottom:"1px"}}key ={item.id}>
-       <ProductCard data ={item}/>
-       <button className="button button-primary" onClick = {()=>{setShowToast(true); addToCart(item)}}>Add to Cart</button>
-
-       </div>)
-       }
-     <p className="toast-message"> {showtoast && toastMessage}</p>
-        </>
-    )
 }

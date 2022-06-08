@@ -3,7 +3,8 @@ export const products = [
       id: 1,
       name: "aam",
       price: 1000,
-      image: "https://www.mango.org/wp-content/uploads/2017/11/keitt-variety.jpg",
+      image: "http://192.168.29.159:5500/src/Images/manggo.svg",
+      quantity: 44
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ export const products = [
       name: "kaam",
       image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
       price: 10000,
+      
     },
   ];
 
@@ -34,7 +36,7 @@ export const products = [
             <img className="card-image" alt="product-img" src={image} ></img>
               <h4 className="card-heading">{name}</h4>
               <p className="card-description">{price}</p>
-              {quantity && (<><small>quantity: {quantity}</small></>)}
+              {quantity >0 && (<><small>quantity: {quantity}</small></>)}
 
           </div>
           </>
