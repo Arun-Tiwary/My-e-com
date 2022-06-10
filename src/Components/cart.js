@@ -24,9 +24,10 @@ export const Cart = () =>{
             itemsInCart.map((item)=>
             <div key = {item.id}>
                 <ProductCard data = {item} />
-                <p>quantity: {item.quantity}</p>
+                {/* <p>quantity: {item.quantity}</p> */}
                 <button className="button button-light" onClick = {()=>dispatch({type: "ADD_TO_CART",payload: item})}>+</button>
-                <button className="button button-light" onClick={()=>dispatch({type: "REMOVE_FROM_CART", payload:item})}>-</button>
+                <button className="button button-light" onClick={()=>dispatch({type: "DELETE_FROM_CART", payload:item})}>-</button>
+                <button className="button button-dark" onClick={()=>dispatch({type: "REMOVE_FROM_CART", payload:item})}>REMOVE ITEM</button>
                 </div>
             )
         }

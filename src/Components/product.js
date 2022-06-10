@@ -3,7 +3,7 @@ export const products = [
       id: 1,
       name: "aam",
       price: 1000,
-      image: "http://192.168.29.159:5500/src/Images/manggo.svg",
+      image: "http://192.168.29.159:5500/src/Images/manngo.png",
       quantity: 44
     },
     {
@@ -32,11 +32,11 @@ export const products = [
   export const ProductCard = ({data:{id = null,name = "noname",price = 0,quantity = 0, image = null}}) =>{
       return(
           <>
-          <div className="card" style ={{}}>
+          <div className="card" style ={{margin:"auto"}}>
             <img className="card-image" alt="product-img" src={image} ></img>
-              <h4 className="card-heading">{name}</h4>
-              <p className="card-description">{price}</p>
-              {quantity >0 && (<><small>quantity: {quantity}</small></>)}
+              <h4 className="card-heading">Name: {name}</h4>
+              <p className="card-description">₹ {price}</p>
+              {quantity >0 && (<><small>Quantity: {quantity}</small></>)}
 
           </div>
           </>
